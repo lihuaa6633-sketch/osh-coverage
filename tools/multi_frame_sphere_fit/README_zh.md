@@ -68,9 +68,9 @@ build/multi_frame_sphere_fit
   --voxel 0.004 \
   --ransac-threshold 0.008 \
   --final-threshold 0.004 \
-  --radius-min 0.065 \
-  --radius-max 0.075 \
-  --fixed-radius 0.070 \
+  --radius-min 0.0625 \
+  --radius-max 0.0825 \
+  --fixed-radius 0.0725 \
   --output sphere_result
 ```
 
@@ -127,7 +127,7 @@ p_common = T_common_lidar × p_lidar
 至少同时检查以下项目：
 
 1. `sphere_fit_colored.pcd` 中绿色点必须落在真实靶标球上，不能主要落在支架、墙面或其他圆弧上。
-2. `coarse_radius_m` 应接近 0.070 m，不能长期贴着 0.065 或 0.075 的边界。
+2. `coarse_radius_m` 应接近 0.0725 m，不能长期贴着 0.0625 或 0.0825 的边界。
 3. `frames_supporting` 不应只有少数帧。采集 20～50 帧时，建议至少 60% 的帧都有球面内点。
 4. `rmse_m` 和 `p95_absolute_residual_m` 越小越好；最终阈值为 4 mm 时，通常希望 RMSE 在 2～3 mm 以内。
 5. `half_center_delta_m` 是前半段与后半段分别拟合的球心差。静止采集时建议小于 0.002～0.003 m；若明显更大，应优先检查雷达晃动、球移动、温漂或坐标变换误差。

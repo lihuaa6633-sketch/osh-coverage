@@ -90,7 +90,7 @@ sphere-target-register run examples/config.example.json
 
 ```bash
 sphere-target-register fit data/target_1.pcd \
-  --radius 0.075 \
+  --radius 0.0725 \
   --radius-tolerance 0.006 \
   --distance-threshold 0.003
 ```
@@ -133,7 +133,7 @@ from sphere_target_registration import fit_sphere_ransac, estimate_rigid_transfo
 
 fit = fit_sphere_ransac(
     target_points_xyz,
-    expected_radius=0.075,
+    expected_radius=0.0725,
     radius_tolerance=0.006,
     distance_threshold=0.003,
 )

@@ -21,21 +21,21 @@
         "max": [1.20, 2.05, 0.75]
       },
       "reference_center": [0.0, 0.0, 0.5],
-      "expected_radius": 0.075,
+      "expected_radius": 0.0725,
       "radius_tolerance": 0.006
     },
     {
       "id": "T2",
       "points": "../data/target_2.ply",
       "reference_center": [4.0, 0.0, 0.5],
-      "expected_radius": 0.075,
+      "expected_radius": 0.0725,
       "radius_tolerance": 0.006
     },
     {
       "id": "T3",
       "points": "../data/target_3.ply",
       "reference_center": [0.0, 3.0, 0.5],
-      "expected_radius": 0.075,
+      "expected_radius": 0.0725,
       "radius_tolerance": 0.006
     }
   ]

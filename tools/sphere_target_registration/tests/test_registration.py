@@ -36,11 +36,11 @@ class SphereFitTests(unittest.TestCase):
     def test_robust_fit_with_partial_surface_and_outliers(self):
         rng = np.random.default_rng(15)
         center = np.array([1.2, -0.7, 0.4])
-        points = noisy_sphere(rng, center, 0.075)
+        points = noisy_sphere(rng, center, 0.0725)
         fit = fit_sphere_ransac(
             points,
             distance_threshold=0.002,
-            expected_radius=0.075,
+            expected_radius=0.0725,
             radius_tolerance=0.006,
             max_iterations=1500,
             min_inliers=100,
@@ -48,7 +48,7 @@ class SphereFitTests(unittest.TestCase):
             random_seed=12,
         )
         np.testing.assert_allclose(fit.center, center, atol=4e-4)
-        self.assertAlmostEqual(fit.radius, 0.075, delta=2e-4)
+        self.assertAlmostEqual(fit.radius, 0.0725, delta=2e-4)
         self.assertLess(fit.rmse, 0.001)
 
 

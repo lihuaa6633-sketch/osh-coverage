@@ -50,9 +50,9 @@ struct Options {
     double voxel_size = 0.004;
     double ransac_threshold = 0.008;
     double final_threshold = 0.004;
-    double radius_min = 0.065;
-    double radius_max = 0.075;
-    double fixed_radius = 0.070;
+    double radius_min = 0.0625;
+    double radius_max = 0.0825;
+    double fixed_radius = 0.0725;
     double huber_delta = 0.003;
 
     int max_iterations = 10000;
@@ -141,9 +141,9 @@ void printUsage(const char* program) {
         << "  --voxel meters              Median voxel size; 0 disables it (default 0.004).\n"
         << "  --ransac-threshold meters   Coarse RANSAC shell threshold (default 0.008).\n"
         << "  --final-threshold meters    Final inlier shell threshold (default 0.004).\n"
-        << "  --radius-min meters         Coarse minimum radius (default 0.065).\n"
-        << "  --radius-max meters         Coarse maximum radius (default 0.075).\n"
-        << "  --fixed-radius meters       Known radius used for final fit (default 0.070).\n"
+        << "  --radius-min meters         Coarse minimum radius (default 0.0625).\n"
+        << "  --radius-max meters         Coarse maximum radius (default 0.0825).\n"
+        << "  --fixed-radius meters       Known radius used for final fit (default 0.0725).\n"
         << "  --huber-delta meters        Huber robust-loss transition (default 0.003).\n"
         << "  --max-iterations n          RANSAC iteration cap (default 10000).\n"
         << "  --probability p             RANSAC probability (default 0.999).\n"
