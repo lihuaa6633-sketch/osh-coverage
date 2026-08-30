@@ -1,0 +1,17 @@
+rtabmap:
+  ros__parameters:
+    frame_id: base_link
+    map_frame_id: airy_map
+    odom_frame_id: airy_odom
+    subscribe_scan_cloud: true
+    subscribe_odom_info: false
+    wait_imu_to_init: true
+    approx_sync: true
+    qos_scan_cloud: 1
+    qos_imu: 1
+    Grid/FromDepth: false
+    Grid/3D: true
+    Grid/CellSize: 0.05
+    RGBD/ProximityBySpace: true
+    RGBD/OptimizeFromGraphEnd: false
+

@@ -1,0 +1,52 @@
+# Python bytecode and test caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# ROS 2 / colcon
+build/
+install/
+log/
+
+# IDE and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Experiment outputs and large local data
+artifacts/
+outputs/
+runs/
+logs/
+results/
+checkpoints/
+datasets/
+data/
+
+# NumPy arrays and trained models
+*.npz
+*.npy
+*.pt
+*.pth
+*.ckpt
+
+# ROS bags and point clouds
+*.db3
+*.bag
+*.pcd
+
+# Temporary files
+*.tmp
+*.temp

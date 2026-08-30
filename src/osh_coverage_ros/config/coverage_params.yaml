@@ -1,0 +1,52 @@
+coverage_planner:
+  ros__parameters:
+    working_width_m: 0.60
+    overlap_ratio: 0.10
+    safety_margin_m: 0.15
+    holonomic: true
+    start_x: 0.30
+    start_y: 0.30
+    auto_plan: true
+    rl_model_path: ""
+    rl_candidate_slots: 6
+
+coverage_monitor:
+  ros__parameters:
+    working_width_m: 0.60
+    minimum_residual_area_m2: 0.05
+    max_retries: 2
+
+coverage_supervisor:
+  ros__parameters:
+    working_width_m: 0.60
+    overlap_ratio: 0.10
+    safety_margin_m: 0.15
+    completion_ratio: 0.98
+    max_retries: 2
+    auto_repair: true
+    rl_model_path: ""
+    rl_candidate_slots: 6
+
+woosh_bridge:
+  ros__parameters:
+    namespace: /woosh_robot
+    slam_to_woosh_x: 0.0
+    slam_to_woosh_y: 0.0
+    slam_to_woosh_yaw: 0.0
+    path_chunk_size: 200
+
+map_projector:
+  ros__parameters:
+    input_topic: /rtabmap/cloud_map
+    output_topic: /map
+    resolution: 0.05
+    minimum_z: 0.08
+    maximum_z: 1.50
+    minimum_hits: 2
+    padding_m: 0.50
+    # Set surveyed experimental bounds before real operation. Zeros derive bounds from the cloud.
+    minimum_x: 0.0
+    maximum_x: 0.0
+    minimum_y: 0.0
+    maximum_y: 0.0
+    accumulate: true
