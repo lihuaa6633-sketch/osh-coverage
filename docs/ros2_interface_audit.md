@@ -54,3 +54,9 @@ ros2 action info /woosh_robot/ros/MoveBase
 
 用两个航点验证接受、反馈、成功、失败、暂停、继续、取消和急停。再依次尝试50、100、200个航点，确定底盘可稳定接受的分块大小；默认配置200只是起始值，不是实测结论。
 
+桥接节点只在以下两个条件同时满足时发送下一分块：
+
+- ROS action 状态为 `STATUS_SUCCEEDED`；
+- `woosh_ros_msgs/Feedback.ret.state.value == K_ROS_SUCCESS (1)`。
+
+拒绝、取消、传输异常或任何非成功厂商状态都会清空剩余分块。首次连接必须保留 `dry_run=true`，用实际消息包验证字段后才可关闭。

@@ -20,7 +20,9 @@ install/
 log/
 
 # IDE and operating-system files
-.vscode/
+# Project-level VSCode settings are intentionally tracked. Personal state is not.
+.vscode/*.log
+.vscode/.ropeproject/
 .idea/
 .DS_Store
 Thumbs.db
@@ -46,6 +48,20 @@ data/
 *.db3
 *.bag
 *.pcd
+*.ply
+*.mcap
+
+# Third-party ROS sources are reproducibly imported from vendor/*.repos.
+src/vendor/
+
+# Native calibration-tool build products
+tools/multi_frame_sphere_fit/build/
+tools/multi_frame_sphere_fit/sphere_result/
+
+# Python packaging products
+*.egg-info/
+dist/
+wheelhouse/
 
 # Temporary files
 *.tmp

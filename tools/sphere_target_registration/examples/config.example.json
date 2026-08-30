@@ -1,0 +1,42 @@
+{
+  "environment_cloud": "../data/scan_map.pcd",
+  "output_cloud": "../output/scan_map_registered.pcd",
+  "report": "../output/registration_report.json",
+  "random_seed": 42,
+  "fitting": {
+    "distance_threshold": 0.003,
+    "max_iterations": 2500,
+    "min_inliers": 80,
+    "min_inlier_ratio": 0.35
+  },
+  "registration": {
+    "maximum_pair_distance_error": 0.015,
+    "minimum_geometry_score": 0.001
+  },
+  "targets": [
+    {
+      "id": "T1",
+      "roi": {
+        "min": [0.80, 1.65, 0.35],
+        "max": [1.20, 2.05, 0.75]
+      },
+      "reference_center": [0.0, 0.0, 0.5],
+      "expected_radius": 0.075,
+      "radius_tolerance": 0.006
+    },
+    {
+      "id": "T2",
+      "points": "../data/target_2.ply",
+      "reference_center": [4.0, 0.0, 0.5],
+      "expected_radius": 0.075,
+      "radius_tolerance": 0.006
+    },
+    {
+      "id": "T3",
+      "points": "../data/target_3.ply",
+      "reference_center": [0.0, 3.0, 0.5],
+      "expected_radius": 0.075,
+      "radius_tolerance": 0.006
+    }
+  ]
+}

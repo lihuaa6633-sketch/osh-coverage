@@ -30,10 +30,14 @@ coverage_supervisor:
 woosh_bridge:
   ros__parameters:
     namespace: /woosh_robot
+    # Safety default: transform and report paths without commanding the chassis.
+    dry_run: true
+    require_idle_before_start: true
     slam_to_woosh_x: 0.0
     slam_to_woosh_y: 0.0
     slam_to_woosh_yaw: 0.0
     path_chunk_size: 200
+    max_path_points: 5000
 
 map_projector:
   ros__parameters:

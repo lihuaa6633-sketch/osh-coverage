@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Test: coverage core",
+      "type": "shell",
+      "command": "PYTHONPATH=src/osh_coverage_core python3 -m unittest discover -s src/osh_coverage_core/test -v",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Test: sphere registration",
+      "type": "shell",
+      "command": "PYTHONPATH=tools/sphere_target_registration/src python3 -m unittest discover -s tools/sphere_target_registration/tests -v",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Test: Woosh protocol helpers",
+      "type": "shell",
+      "command": "PYTHONPATH=src/osh_coverage_core:src/osh_coverage_ros python3 -m pytest -q src/osh_coverage_ros/test",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Build: ROS 2 workspace",
+      "type": "shell",
+      "command": "source /opt/ros/humble/setup.bash && colcon build --symlink-install --cmake-args -DENABLE_IMU_DATA_PARSE=ON -DENABLE_TRANSFORM=ON",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Test: ROS 2 workspace",
+      "type": "shell",
+      "command": "source /opt/ros/humble/setup.bash && source install/setup.bash && colcon test && colcon test-result --verbose",
+      "group": "test",
+      "problemMatcher": []
+    }
+  ]
+}

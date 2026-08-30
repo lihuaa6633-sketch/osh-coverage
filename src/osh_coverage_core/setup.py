@@ -12,6 +12,7 @@ setup(
         ("share/" + package_name, ["package.xml"]),
     ],
     install_requires=["numpy"],
+    tests_require=["pytest"],
     zip_safe=True,
     maintainer="OSH Coverage Research",
     maintainer_email="research@example.com",
@@ -25,4 +26,3 @@ setup(
         ]
     },
 )
-
